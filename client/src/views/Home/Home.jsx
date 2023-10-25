@@ -119,7 +119,7 @@ const Home = () =>{
                     )
                 })}
             </div>
-            <div className={style.Pagination}>
+            <div>
                 <Pagination recipesPerPage={recipesPerPage} recipes={recipes.length} />
             </div>
             <div className='buttonsBackCreate'>

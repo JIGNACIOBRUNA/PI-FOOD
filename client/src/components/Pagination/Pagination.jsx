@@ -1,5 +1,5 @@
 import React from "react";
-import style from './Pagination.module.css'
+import style from './Pagination.module.css';
 import { useDispatch, useSelector } from "react-redux";
 import { changeCurrentPage } from "../../redux/actions"
 const Pagination = ({ recipesPerPage, recipes }) =>{
@@ -21,7 +21,7 @@ const Pagination = ({ recipesPerPage, recipes }) =>{
 
     return(
         <div >
-            <div className={style.Pagination}>
+            <div className={style.pagination}>
                 <ul className="pages">
                 { page >= 2 && 
                 <button onClick={() => pagination(1)} className={style.buttonPrevNext}>{"<<"}</button>}
