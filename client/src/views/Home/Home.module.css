@@ -1,0 +1,32 @@
+.filter{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px; /* Crea espacio entre la navbar y los botones */
+  margin-bottom: 20px;
+}
+
+.filters {
+  background-color: #a83232; /* Cambia el color de fondo */
+  color: black; /* Cambia el color del texto */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.filters:hover{ 
+  background-color: #ff7d04
+}
+
+.card{
+  width: 85vw;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+
