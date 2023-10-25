@@ -24,8 +24,8 @@ const SearchBar = () => {
   console.log('console.log2', recipes)
   
   return(
-    <div className={style.search}>
-      <input type="text" placeholder="Search" value={recipes} onChange={e => handleChangeName(e)} ></input>
+    <div>
+      <input className={style.search} type="text" placeholder="Search" value={recipes} onChange={e => handleChangeName(e)} ></input>
       <button className={style.button} type="submit" onClick={e => handleSubmit(e)}>Search</button>
 
     </div>
