@@ -5,7 +5,9 @@
 }
 
 .button{
-   background-color: #ff7d04; 
+   background-color: #ff7d04;
+   font-size: 14px;
+   font-family: 'Aharoni', sans-serif;
    border: none;
    border-radius: 5px;
    padding: 5px 10px;
@@ -16,4 +18,4 @@
     transform: scale(1.1);
     transition: all 0.3s;
     background-color: #ffd104
-  }
+}

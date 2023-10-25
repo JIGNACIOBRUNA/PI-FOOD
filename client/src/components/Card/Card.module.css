@@ -14,8 +14,6 @@
     box-shadow: 3px 3px 5px 1px rgb(112, 44, 44);
     width: 275px;
     height: 275px;
-    
- 
 }
 
 .contenedor :hover{
@@ -31,8 +29,6 @@
     border-radius: 6px;
     width: 150px;
     height: 120px; 
-    /* border-radius: 1rem;
-    border: 5px solid gold; */
 }
 
 .recipeName {
@@ -44,6 +40,16 @@
 }
 .recipeName:hover {
     overflow: visible;
+}
+
+.diet{
+    display: flex;
+    font-size: 15px;
+    text-decoration: none;
+    color:black;
+    font-style: italic;
+    font-weight: 700;    
+    text-shadow: 6px 4px 5px rgba(0,0,0,0.43); 
 }
 
 

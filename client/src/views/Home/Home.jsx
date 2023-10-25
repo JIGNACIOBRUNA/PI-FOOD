@@ -67,7 +67,7 @@ const Home = () =>{
         <div>
             <NavBar />
             <div className={style.filter}> 
-                <span>Filter by</span>
+                <span className={style.title}>Filter by</span>
                     <select className={style.filters} onChange={(e) => handleFilterbyDiets(e)}>
                     <option value= 'all diets'>All diets</option>
                         <option value= 'gluten free'>Gluten free</option>
@@ -83,7 +83,7 @@ const Home = () =>{
                         <option value= 'whole 30'>Whole 30</option>
                     </select>
                
-                <span>Order by</span>
+                <span className={style.title}>Order by</span>
                 <select className={style.filters} onChange={e => handleSortName(e)}>
                     <option value='asc'>A-Z</option>
                     <option value='desc'>Z-A</option>
@@ -95,12 +95,13 @@ const Home = () =>{
                     <option value='desc'>Descendent</option>
                 </select>
             
-                <span>Created/Existent</span>
+                <span className={style.title}>Created/Existent</span>
                 <select className={style.filters} onChange={e => handleFilterCreated(e)}>
                     <option value='All'>All</option>
                     <option value='Created'>Created</option>
                     <option value='Api'>Existent</option>
                 </select>
+                <button className={style.filters} onClick={e => handleClick(e)}>Back to all recipes</button>   
             </div>
             <div className={style.card}>
                 {recipesPage?.map(props => {
@@ -122,9 +123,6 @@ const Home = () =>{
             <div>
                 <Pagination recipesPerPage={recipesPerPage} recipes={recipes.length} />
             </div>
-            <div className='buttonsBackCreate'>
-                <button className={style.recipesBack} onClick={e => handleClick(e)}>Back to all recipes</button>
-            </div>    
         </div>
     )
 }

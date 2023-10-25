@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 
 //debe mostrar la info de cada recipe mapeado, ademas darnos un link para ir al detalle 
-const Card = (props, id, name, image, summary, stepByStep, diets) =>{
+const Card = (props) =>{
     return(
         <div className={style.contenedor}>
             <Link to={`/recipe/${props.id}`} className={style.recipeName}>{props.name}</Link>
@@ -14,4 +14,4 @@ const Card = (props, id, name, image, summary, stepByStep, diets) =>{
     )
 }
 
-export default Card
+export default Card;
