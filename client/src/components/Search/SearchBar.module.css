@@ -19,3 +19,7 @@
     transition: all 0.3s;
     background-color: #ffd104
 }
+
+.container{
+    display: flex;
+}

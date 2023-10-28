@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getDiet, postRecipe, allRecipes, filterByDiet, createRecipe } from "../../redux/actions";
 import { Link, useHistory } from "react-router-dom";
+import style from "./Form.module.css";
 
 
 function validate(input){
@@ -86,16 +87,16 @@ const Form = () =>{
         setDietsDB([...dietsDB, e.target.value]);
 };
 
-    const handleDelete = (e) =>{
-        setInput({
-            ...input,
-            diets: input.diets.filter( d => d !== e)
-        })
-        setErrors(validate({
-            ...input,
-            diets: input.diets.filter( d => d !== e)
-        }))
-    }
+    // const handleDelete = (e) =>{
+    //     setInput({
+    //         ...input,
+    //         diets: input.diets.filter( d => d !== e)
+    //     })
+    //     setErrors(validate({
+    //         ...input,
+    //         diets: input.diets.filter( d => d !== e)
+    //     }))
+    // }
 
     
     const disabled = Object.keys(errors).length 
@@ -103,43 +104,43 @@ const Form = () =>{
         <div>
             <NavBar />
             <h1>Form</h1>
-            <div className="fondoCreate">
+            <div >
                 <div>
-                    <Link to='/home'><button className="buttonBackRecipes" >Back to recipes</button></Link>
-                    <h3 className="titleCreate">Create your recipe</h3>
+                    <Link to='/home'><button className={style.buttonBackRecipes} >Back to recipes</button></Link>
+                    <h3 className={style.titleCreate}>Create your recipe</h3>
                 </div>
-                <div className='containerCreate'>
+                <div className={style.containerCreate}>
                     <form onSubmit={e => handleSubmit(e)}>
-                        <div>
+                        <div className={style.formGroup}>
                             <label >Name:</label>
-                            <input type='text' className="input" value={input.name} name='name' onChange={e => handleChange(e)} />
-                            {errors.name && (<span className="error">{errors.name}</span>)}
+                            <input type='text' className={style.input} value={input.name} name='name' onChange={e => handleChange(e)} />
+                            {errors.name && (<span className={style.error}>{errors.name}</span>)}
                         </div>
-                        <div>
+                        <div className={style.formGroup}>
                             <label>Image:</label>
-                            <input type='text' className="input" value={input.image} name='image' onChange={e => handleChange(e)} />
-                            {errors.image && (<span className="error">{errors.image}</span>)}
+                            <input type='text' className={style.input} value={input.image} name='image' onChange={e => handleChange(e)} />
+                            {errors.image && (<span className={style.error}>{errors.image}</span>)}
                         </div>
-                        <div>
+                        <div className={style.formGroup}>
                             <label>Summary:</label>
-                            <input type='text' className="input" value={input.summary} name='summary' onChange={e => handleChange(e)} />
+                            <input type='text' className={style.input} value={input.summary} name='summary' onChange={e => handleChange(e)} />
                             {errors.summary &&
-                                (<span className="error">{errors.summary}</span>)}
+                                (<span className={style.error}>{errors.summary}</span>)}
                         </div>
-                        <div>
+                        <div className={style.formGroup}>
                             <label>StepByStep:</label>
-                            <textarea type="text" className="input" value={input.step} name="step" rows="4" cols="40" onChange={e => handleChange(e)} />
-                            {errors.step && (<span className="error">{errors.step}</span>)}
+                            <textarea type="text" className={style.input} value={input.step} name="step" rows="4" cols="40" onChange={e => handleChange(e)} />
+                            {errors.step && (<span className={style.error}>{errors.step}</span>)}
                         </div>
-                        <div>
+                        <div className={style.formGroup}>
                             <label>Healt score:</label>
-                            <input type='number' className="input" value={input.healthScore} name='healthScore' onChange={e => handleChange(e)} />
-                            {errors.healthScore && (<span className="error">{errors.healthScore}</span>)}
+                            <input type='number' className={style.input} value={input.healthScore} name='healthScore' onChange={e => handleChange(e)} />
+                            {errors.healthScore && (<span className={style.error}>{errors.healthScore}</span>)}
                         </div>
-                        <div>
+                        <div className={style.formGroup}>
                             <label>Diets</label>
                         </div>
-                        <select
+                        <select className={style.formGroup}
                             defaultValue="DEFAULT"
                             name="form-diets"
                             onChange={handleSelect}
@@ -163,7 +164,7 @@ const Form = () =>{
                                 </li>
                             ))}
                         </ul>
-                        <div>
+                        <div className={style.formGroup }>
                             <button type="submit">Create recipe</button>
                         </div>
                     </form>

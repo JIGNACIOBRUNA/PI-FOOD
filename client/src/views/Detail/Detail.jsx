@@ -2,15 +2,10 @@
 import { useEffect } from "react"; 
 import { useDispatch, useSelector } from "react-redux"; //
 import { detailRecipe } from "../../redux/actions";
-import CardsContainer from "../../components/CardsContainer/CardsContainer";
 import { useParams } from "react-router-dom";
 import NavBar from "../../components/Navbar/Navbar";
+import style from "./Detail.module.css";
 
-// const recipeDetails = useSelector(state => state.recipeDetails)
-// const {id} = useParams();
-// useEffect(()=>{
-//     dispatch(detailRecipe(id));
-// },[])
 
 const Detail = () =>{
     const dispatch = useDispatch();
@@ -23,13 +18,15 @@ const Detail = () =>{
 
     return(
         <div key={id}>
-            <NavBar/>
-        <h2>{detail.id}</h2>
-        <h2>Name{detail.name}</h2>
-        <img src={detail.image}/>
-        <h2>Summary{detail.summary}</h2>
-        <h2>healthScore{detail.healthScore}</h2>
-        <h2>stepByStep{detail.stepByStep}</h2>
+            <NavBar />
+            <div className={style.contenedor}>
+                <h2>Id: {detail.id}</h2>
+                <h2>Name: {detail.title}</h2>
+                <img className={style.image} src={detail.image} />
+                {/* <h2>Summary{detail.summary}</h2> */}
+                <h2>healthScore: {detail.healthScore}</h2>
+                {/* <h2>stepByStep{detail.instructions}</h2> */}
+            </div>
         </div>
     )
 }
