@@ -8,5 +8,7 @@ export const SEARCH_RECIPE = "SEARCH_RECIPE";
 export const FILTER = "FILTER";
 export const ALPHABETICAL_SORT = "ALPHABETICAL_SORT";
 export const LOCAL_HOST = "http://localhost:3001";
+export const GET_DIETS = "GET DIETS";
+export const CREATE_RECIPE = "CREATE_ RECIPE";
 
 

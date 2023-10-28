@@ -62,41 +62,6 @@ const getDiets = async () => { // obtenemos las dietas
 };
 
 
-
-
-
-// const loadDietsDB = async () =>{
-//     const urlDiet = await axios.get(`${API_URL}/complexSearch?diets&apiKey=${API_KEY}`, {headers: { 'Accept-Encoding': 'identify'}} )
-//     const diets = urlDiet.data.results.map(recipe => recipe.diets).flat();
-//     const uniqueDiets = Array.from(new Set(diets));
-
-//     await Promise.all(uniqueDiets.map(async diet =>{
-//       await Diets.findOrCreate({
-//         where: { name: diet }
-//       });
-//     }));
-// };
-
-// const getDietsDB = async () =>{
-//   const dietsDb = await Diets.findAll();
-//   return dietsDb;
-// }
-
-
-// const fetchDietsFromAPI = async () => {
-//   try {
-//     const response = await axios.get(`${API_URL}/complexSearch?diets&apiKey=${API_KEY}&addRecipeInformation=true&number=100&offset=100`);
-//     const diets = response.data;
-
-//     return diets;
-//   } catch (error) {
-//     throw new Error('Error al obtener los tipos de dietas de la API');
-//   }
-// };
-
- module.exports = {
-//   // loadDietsDB,
-//   // getDietsDB, 
-//   //fetchDietsFromAPI 
-getDiets
+ module.exports = { 
+  getDiets
  }

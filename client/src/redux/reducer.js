@@ -1,4 +1,4 @@
-import { ALL_RECIPES, CLEAN_RECIPE_DETAIL, RECIPE_BY_ID, RECIPE_BY_NAME, ALL_DIETS, SEARCH_RECIPE, FILTER, ALPHABETICAL_SORT, LOCAL_HOST, DETAIL_RECIPE } from "./actionsTypes";
+import { ALL_RECIPES, CLEAN_RECIPE_DETAIL, GET_DIETS, RECIPE_BY_NAME, DETAIL_RECIPE, CREATE_RECIPE } from "./actionsTypes";
 
 const intialState = { // al inicio de la app este es el estado global
     currentPage: 1,
@@ -12,19 +12,19 @@ const intialState = { // al inicio de la app este es el estado global
 const rootReducer = (state = intialState, action) =>{
     switch(action.type){
         case ALL_RECIPES:
-            return{ ...state, recipes: action.payload.recipes, allRecipes: action.payload.allRecipes };
+            console.log("Estado de recipes antes de la actualización:", state.recipes);
+            console.log("Nuevo valor de action.payload:", action.payload);
+            const newState = { ...state, recipes: action.payload, allRecipes: action.payload };
+            return newState;
         
         case DETAIL_RECIPE:
             return{ ...state, detail: action.payload.detail};
             
         case RECIPE_BY_NAME:
-            return{...state, recipes: action.payload}    
+            return{...state, recipes: action.payload}       
 
-        case'POST_RECIPE':
-            return {...state}    
-
-        case'GET_DIETS':
-            return {...state, diets: action.payload.diets, /*allDiets: action.payload.allDiets*/}    
+        case GET_DIETS:
+            return {...state, diets: action.payload }    
 
         case CLEAN_RECIPE_DETAIL:
             return{...state, detail: action.payload}  
@@ -99,6 +99,9 @@ const rootReducer = (state = intialState, action) =>{
 
         case 'CURRENT_PAGE':
             return {...state, currentPage: action.payload}    
+
+        case CREATE_RECIPE:
+            return {...state, allRecipes: action.payload};    
               
         default:
             return{...state};

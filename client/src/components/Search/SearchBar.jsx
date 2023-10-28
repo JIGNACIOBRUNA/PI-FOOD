@@ -21,8 +21,7 @@ const SearchBar = () => {
       setRecipes('');
     
   }
-  console.log('console.log2', recipes)
-  
+    
   return(
     <div>
       <input className={style.search} type="text" placeholder="Search" value={recipes} onChange={e => handleChangeName(e)} ></input>

@@ -1,11 +1,11 @@
 import axios from "axios";
-import { ALL_RECIPES, DETAIL_RECIPE, CLEAN_RECIPE_DETAIL, RECIPE_BY_ID, RECIPE_BY_NAME, ALL_DIETS, SEARCH_RECIPE, FILTER, ALPHABETICAL_SORT, LOCAL_HOST } from "./actionsTypes";
+import { ALL_RECIPES, DETAIL_RECIPE, RECIPE_BY_NAME, LOCAL_HOST, GET_DIETS, CREATE_RECIPE } from "./actionsTypes";
 
 export const allRecipes = () =>{
     return async function(dispatch){
         const apiData = await axios.get(`${LOCAL_HOST}/recipes/`);
         const recipes = apiData.data;
-        return dispatch({ type: ALL_RECIPES, payload: {recipes}})
+        return dispatch({ type: ALL_RECIPES, payload: recipes })
     };
 };
 
@@ -21,7 +21,7 @@ export const getDiet = () =>{
     return async function (dispatch){
        const apiData = await axios.get(`${LOCAL_HOST}/diets/`)
        const diets = apiData.data;
-        return dispatch({ type: 'GET_DIETS', payload: diets.map(e => e.name) })
+        return dispatch({ type: GET_DIETS, payload: diets })
     }
 }
 
@@ -81,6 +81,14 @@ export const changeCurrentPage = payload => {
         dispatch({ type: 'CURRENT_PAGE', payload})
     }
 };
+
+export const createRecipe = payload =>{
+    return async dispatch =>{
+        const apiData = await axios.post(`${LOCAL_HOST}/recipes`, payload);
+        const newRecipe = apiData.data;
+        dispatch({type: CREATE_RECIPE, payload: newRecipe})
+    }
+}
 
 
 

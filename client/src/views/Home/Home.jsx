@@ -17,8 +17,6 @@ const Home = () =>{
     const diets = useSelector((state) => state.diets)
     const page = useSelector(state => state.currentPage)
     const [ , setOrder ] = useState('')
-  
-
     //paginado
     const recipesPerPage = 10
     const lastRecipe = page * recipesPerPage // 1 * 9 = 9

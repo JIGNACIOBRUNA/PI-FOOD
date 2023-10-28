@@ -1,7 +1,6 @@
 import './App.css';
 import { Home, Landing, Detail, Form } from "./views";
 import {Route, useLocation} from "react-router-dom";
-import NavBar from './components/Navbar/Navbar';
 //utilizo exact para en la ruta / solo aparezca Landing 
 function App() {
   const location = useLocation();
