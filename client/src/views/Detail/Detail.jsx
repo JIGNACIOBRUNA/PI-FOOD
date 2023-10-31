@@ -23,9 +23,9 @@ const Detail = () =>{
                 <h2>Id: {detail.id}</h2>
                 <h2>Name: {detail.title}</h2>
                 <img className={style.image} src={detail.image} />
-                {/* <h2>Summary{detail.summary}</h2> */}
+                <h2>Summary: {detail.summary}</h2>
                 <h2>healthScore: {detail.healthScore}</h2>
-                {/* <h2>stepByStep{detail.instructions}</h2> */}
+                <h2>StepByStep: {detail.instructions}</h2>
             </div>
         </div>
     )

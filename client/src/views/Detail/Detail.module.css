@@ -4,11 +4,18 @@
     flex-direction: column;
     background-color: rgb(231, 218, 218, 0.3);
     align-items: center;
-    justify-content:center;
+    justify-content: flex-start; /* Cambia de "center" a "flex-start" para alinear elementos arriba */
     box-shadow: 3px 3px 5px 1px rgb(112, 44, 44);
-    width: 280px;
-    height: 420px;
+    width: 80%; /* Ajusta el ancho según tus necesidades */
+    max-width: 600px; /* Establece un ancho máximo para evitar que se vuelva demasiado ancho */
+    min-height: 500px; /* Establece una altura mínima para garantizar suficiente espacio */
+    padding: 20px; /* Agrega relleno para separar los elementos del borde del contenedor */
 }
+.contenedor h2 {
+    font-size: 16px; /* Tamaño de fuente más pequeño */
+}
+
+
 .contenedor :hover{
     transform: scale(1.2);
     transition: all 0.3s;
@@ -22,16 +29,7 @@
     width: 150px;
     height: 120px; 
 }
-/* Estilo de la vista previa */
-.preview {
-    max-height: 100px; /* Altura máxima de la vista previa */
-    overflow: hidden;
-  }
-  
-  /* Estilo del contenido completo */
-  .fullSummary {
-    display: block; /* Asegura que ocupe todo el espacio disponible */
-  }
+
   
   
   
